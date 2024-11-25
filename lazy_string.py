@@ -80,3 +80,6 @@ class LazyString(UserString):
       return f"{self.__class__.__name__}({r})"
     except Exception:
       return "<%s broken>" % self.__class__.__name__
+
+  def __format__(self, format_spec):
+    return format(self._func(*self._args,**self._kwargs), format_spec)

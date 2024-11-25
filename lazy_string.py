@@ -33,7 +33,7 @@ class LazyString(UserString):
 
   """
 
-  __slots__ = ("_func", "_args", )
+  __slots__ = ("_func", "_args", '_kwargs')
 
   def __new__(cls, func: Union[Callable, str], *args: Tuple, **kwargs: Mapping) -> object:
     if isinstance(func, str):
